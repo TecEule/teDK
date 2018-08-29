@@ -80,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\teFileOperation\teFileOperation.csproj">
+      <Project>{c055c4f7-639c-46d4-b071-6c9ed4833fb1}</Project>
+      <Name>teFileOperation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TerminkalenderType\teTerminkalenderType.csproj">
       <Project>{a9d06f74-c466-4e9f-97aa-0e6ac3acb8a8}</Project>
       <Name>teTerminkalenderType</Name>

@@ -4,14 +4,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace teFileOperation
 {
   public class teFileOperationBase : IteFileOperation
   {
 
-    protected static string filePath = "";
-    private readonly string folderTeFile = "//teFile";
+    public static string filePath = "";
+    private readonly string folderTeFile = "//..//teFile";
 
     public teFileOperationBase() 
     {
@@ -20,14 +21,20 @@ namespace teFileOperation
 
     public virtual void getFilePath()
     {
-      
-      string currentDir = Environment.CurrentDirectory;
-
-      filePath += currentDir + folderTeFile;
-
-      if (!Directory.Exists(filePath))
+      try
       {
-        Directory.CreateDirectory(filePath);
+        string currentDir = Environment.CurrentDirectory;
+
+        filePath += currentDir + folderTeFile;
+
+        if (!Directory.Exists(filePath))
+        {
+          Directory.CreateDirectory(filePath);
+        }
+      }
+      catch(IOException ex)
+      {
+        MessageBox.Show(String.Format("Beim überprüfen der Struktur vom Verzeichnis ist ein Fehler aufgetreten.{0}Meldung: {1}",Environment.NewLine, ex.Message));
       }
 
     }
@@ -43,6 +50,15 @@ namespace teFileOperation
       bool saveSuccessful = false;
 
       return saveSuccessful;
+    }
+
+    public virtual bool readFile()
+    {
+      bool readSuccessful = false;
+
+
+
+      return readSuccessful;
     }
   }
 
