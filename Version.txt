@@ -1,0 +1,11 @@
+Aufgaben vom Projekt:
+- Lesen und Speichern von [JSON, XML, Excel] vom Kalenderprojekt
+- Anzeige von den Kalendertypen in TreelistNode
+
+Verzeichnisstruktur Ordner
+-Terminkalender(Name frei wählbar)
+	- bin(ausführbaredatei)
+	- ini(wird noch nicht verwendet)
+	- teFiles(Speicherort für die eingetragenen Termine)
+
+
