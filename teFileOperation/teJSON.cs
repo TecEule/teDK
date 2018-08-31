@@ -22,7 +22,10 @@ namespace teFileOperation
       get
       {
         if (_instance == null)
+        {
           _instance = new teJSON();
+          _instance.getFilePath();       
+        }
         return _instance;
       }
     }
@@ -36,15 +39,12 @@ namespace teFileOperation
 
     public override void getFilePath()
     {
-      base.getFilePath();
+      base.getFilePath();  
     }
 
     private bool existFile()
     {
       bool fileExist = false;
-
-      getFilePath();
-
 
       currentFilePath = filePath + "//teJson" + fileEndung;
 
